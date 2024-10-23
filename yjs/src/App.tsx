@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 // import { invoke } from "@tauri-apps/api/core";
 import "./App.css";
 import * as Y from "yjs";
+import { invoke } from "@tauri-apps/api/core";
 
 function App({
   ymap,
@@ -15,6 +16,7 @@ function App({
 }) {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("none");
+  // this is simply a cheap way to get the view to re-render and update
   const [lastUpdate, setLastUpdate] = useState(0);
   if (idb)
     idb.whenSynced.then(() => {
@@ -38,7 +40,7 @@ function App({
 
   async function greet() {
     // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-    // setGreetMsg(await invoke("greet", { name }));
+    setGreetMsg(await invoke("greet", { name }));
     ymap.set(
       name,
       `Greetings ${name}, saying hi from a ymap at timestamp ${Date.now()}`
@@ -82,6 +84,10 @@ function App({
       <p>{greetMsg}</p>
       <pre>{`${JSON.stringify(ymap.toJSON(), null, 2)}`}</pre>
       <pre>{`${JSON.stringify(yarray.toJSON(), null, 2)}`}</pre>
+
+      <button onClick={() => invoke("start_signaling_server", { name })}>
+        Connect
+      </button>
     </div>
   );
 }

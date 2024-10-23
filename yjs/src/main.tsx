@@ -8,14 +8,14 @@ import { WebrtcProvider } from "y-webrtc";
 // import { IndexeddbPersistence } from "y-indexeddb";
 
 const ydoc = new Y.Doc();
-const protocol = "wss"; // window.location.protocol === "https" ? "wss" : "ws";
+const protocol = "ws"; // window.location.protocol === "https" ? "wss" : "ws";
 
 // this allows you to instantly get the (cached) documents data
 // const indexeddbProvider = new IndexeddbPersistence("greeter-list", ydoc);
 
 // Sync clients with the y-webrtc provider.
 const webrtcProvider = new WebrtcProvider("tauri-greeter", ydoc, {
-  signaling: [`${protocol}://signaling.yjs.dev`, `wss://sync.automerge.org`],
+  signaling: [`${protocol}://localhost:8007/signaling`],
   password: "optional-room-password",
 });
 webrtcProvider.on("status", (args) => console.log(args));
