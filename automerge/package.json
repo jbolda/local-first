@@ -10,23 +10,27 @@
     "tauri": "tauri"
   },
   "dependencies": {
-    "@automerge/automerge-repo": "^1.2.1",
-    "@automerge/automerge-repo-network-websocket": "^1.2.1",
-    "@automerge/automerge-repo-react-hooks": "^1.2.1",
-    "@automerge/automerge-repo-storage-indexeddb": "^1.2.1",
-    "@tauri-apps/api": ">=2.0.0-rc.0",
-    "@tauri-apps/plugin-shell": ">=2.0.0-rc.0",
-    "@picocss/pico": "^2.0.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "vite-plugin-wasm": "^3.2.2"
+    "@automerge/automerge-repo": "^2.1.0",
+    "@automerge/automerge-repo-network-broadcastchannel": "^2.1.0",
+    "@automerge/automerge-repo-network-websocket": "^2.1.0",
+    "@automerge/automerge-repo-react-hooks": "^2.1.0",
+    "@automerge/automerge-repo-storage-indexeddb": "^2.1.0",
+    "@tauri-apps/api": ">=2.7.0",
+    "@picocss/pico": "^2.1.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "vite-plugin-wasm": "^3.5.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.2.1",
-    "typescript": "^5.2.2",
-    "vite": "^5.3.1",
-    "@tauri-apps/cli": ">=2.0.0-rc.0"
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.7.0",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.5",
+    "@tauri-apps/cli": ">=2.7.1"
+  },
+  "volta": {
+    "node": "24.4.1",
+    "npm": "11.4.2"
   }
 }
